@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Tech Logistics</title>
+    <meta
+        name="description"
+        content="Login to your Tech Logistics dispatch dashboard."
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    />
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <img
+                src="images/logo.png"
+                alt="Tech Logistics"
+                class="loader-logo"
+            />
+            <div class="loader-spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Tech Logistics" />
+                <span>Tech Logistics</span>
+            </a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link active">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="signup.html" class="nav-link">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="auth-section">
+        <div class="auth-bg"></div>
+        <div class="auth-overlay"></div>
+
+        <div class="auth-container">
+            <div class="auth-card reveal active">
+                <div class="auth-header">
+                    <img
+                        src="images/logo.png"
+                        alt="Tech Logistics"
+                        class="auth-logo"
+                    />
+                    <h1>Welcome Back</h1>
+                    <p>Sign in to your dispatch dashboard</p>
+                </div>
+
+                <form class="auth-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        />
+                        <i class="fas fa-envelope"></i>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        />
+                        <i class="fas fa-lock"></i>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="rememberMe" />
+                            <span class="checkmark"></span>
+                            Remember Me
+                        </label>
+
+                        <a href="#" class="forgot-password">
+                            Forgot Password?
+                        </a>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-full"
+                    >
+                        Login
+                    </button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>
+                        Don't have an account?
+                        <a href="signup.html">Sign Up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tech Logistics. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Tech Logistics</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <img src="logo.png" alt="Tech Logistics" class="loader-logo" />
+            <div class="loader-spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+                    <img src="logo.png" alt="Tech Logistics" />
+                    <span style="color:#ffffff; font-weight:700; font-size:1.3rem;">Tech Logistics</span>
+                </a>
+            </div>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="login.html" class="nav-link">Login</a></li>
+                <li class="nav-item"><a href="signup.html" class="nav-link">Sign Up</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero services-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img src="logo.png" alt="Tech Logistics" class="hero-logo" />
+            <h1 class="hero-title">Contact Us</h1>
+            <p class="hero-subtitle">Send us your message and we'll get back to you soon.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact reveal">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 8854972180</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>logisticstech63@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Dallas, Texas, USA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form id="contactForm" class="auth-card">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Enter your full name"
+                                required
+                            />
+                            <i class="fas fa-user"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Enter your email"
+                                required
+                            />
+                            <i class="fas fa-envelope"></i>
+                        </div>
+
+                        <!-- Phone Number Removed -->
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                placeholder="Enter message subject"
+                                required
+                            />
+                            <i class="fas fa-tag"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                placeholder="Write your message here..."
+                                required
+                                style="width:100%; padding:1rem; border:2px solid #e1e5e9; border-radius:15px; font-size:1rem; resize:vertical;"
+                            ></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 Tech Logistics. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/918854972180" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script type="module" src="firebase-config.js"></script>
+    <script type="module" src="contact.js"></script>
+</body>
+</html>

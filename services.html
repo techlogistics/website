@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services - Tech Logistics</title>
+    <meta
+        name="description"
+        content="Comprehensive truck dispatch services, ELD logbook management, rate negotiation, and DOT compliance support."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-content">
+            <img src="images/logo.png" alt="Tech Logistics" class="loader-logo" />
+            <div class="loader-spinner"></div>
+            <p>Loading...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Tech Logistics" />
+                <span>Tech Logistics</span>
+            </a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link active">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="login.html" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="signup.html" class="nav-link">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero services-hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <img
+                src="images/logo.png"
+                alt="Tech Logistics"
+                class="hero-logo"
+            />
+            <h1 class="hero-title">Our Services</h1>
+            <p class="hero-subtitle">
+                Complete dispatch and compliance solutions for your trucking
+                business
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services reveal" id="services">
+        <div class="container">
+            <h2 class="section-title">Professional Trucking Services</h2>
+
+            <div class="services-grid">
+                <!-- Dispatch Services -->
+                <div class="service-card" id="dispatch">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Dispatch Services</h3>
+                    <p>
+                        24/7 professional dispatch services to find the highest
+                        paying loads nationwide.
+                    </p>
+                    <ul>
+                        <li>Load planning and booking</li>
+                        <li>Dedicated dispatcher</li>
+                        <li>Route optimization</li>
+                        <li>Broker communication</li>
+                        <li>24/7 support</li>
+                    </ul>
+                </div>
+
+                <!-- Load Booking -->
+                <div class="service-card" id="load-booking">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3>Load Booking</h3>
+                    <p>
+                        Access premium loads from top brokers and direct
+                        shippers across the USA.
+                    </p>
+                    <ul>
+                        <li>DAT & Truckstop load boards</li>
+                        <li>Direct shipper contracts</li>
+                        <li>Backhaul planning</li>
+                        <li>Hotshot and dry van loads</li>
+                        <li>Reefer and flatbed loads</li>
+                    </ul>
+                </div>
+
+                <!-- Rate Negotiation -->
+                <div class="service-card" id="rate-negotiation">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Rate Negotiation</h3>
+                    <p>
+                        Expert negotiators securing maximum rates per mile for
+                        every load.
+                    </p>
+                    <ul>
+                        <li>Market rate analysis</li>
+                        <li>Broker negotiations</li>
+                        <li>Detention and layover requests</li>
+                        <li>TONU requests</li>
+                        <li>Contract reviews</li>
+                    </ul>
+                </div>
+
+                <!-- Broker Setup -->
+                <div class="service-card" id="broker-setup">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Broker Setup</h3>
+                    <p>
+                        Complete broker packet setup and carrier approval
+                        assistance.
+                    </p>
+                    <ul>
+                        <li>Carrier packet completion</li>
+                        <li>Insurance verification</li>
+                        <li>MC authority setup</li>
+                        <li>Broker approvals</li>
+                        <li>Credit checks</li>
+                    </ul>
+                </div>
+
+                <!-- ELD Management -->
+                <div class="service-card" id="eld">
+                    <div class="service-icon">
+                        <i class="fas fa-tablet-alt"></i>
+                    </div>
+                    <h3>ELD Logbook Management</h3>
+                    <p>
+                        Complete electronic logging device management and
+                        compliance support.
+                    </p>
+                    <ul>
+                        <li>Logbook monitoring</li>
+                        <li>Log editing assistance</li>
+                        <li>HOS compliance</li>
+                        <li>Violation prevention</li>
+                        <li>Driver support</li>
+                    </ul>
+                </div>
+
+                <!-- HOS Monitoring -->
+                <div class="service-card" id="hos">
+                    <div class="service-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>HOS Monitoring</h3>
+                    <p>
+                        Real-time Hours of Service monitoring to avoid costly
+                        violations.
+                    </p>
+                    <ul>
+                        <li>11/14 hour tracking</li>
+                        <li>70-hour cycle monitoring</li>
+                        <li>Break reminders</li>
+                        <li>Recap calculations</li>
+                        <li>Compliance alerts</li>
+                    </ul>
+                </div>
+
+                <!-- DOT Compliance -->
+                <div class="service-card" id="dot">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>DOT Compliance Support</h3>
+                    <p>
+                        Complete DOT compliance management and audit preparation.
+                    </p>
+                    <ul>
+                        <li>DOT audit preparation</li>
+                        <li>CSA score monitoring</li>
+                        <li>Safety documentation</li>
+                        <li>Drug consortium guidance</li>
+                        <li>Record organization</li>
+                    </ul>
+                </div>
+
+                <!-- IFTA Assistance -->
+                <div class="service-card" id="ifta">
+                    <div class="service-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3>IFTA Assistance</h3>
+                    <p>
+                        International Fuel Tax Agreement reporting and filing
+                        support.
+                    </p>
+                    <ul>
+                        <li>Fuel tax calculations</li>
+                        <li>Quarterly IFTA filing</li>
+                        <li>Mileage reports</li>
+                        <li>State registrations</li>
+                        <li>Audit support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta reveal">
+        <div class="container">
+            <h2>Ready to Grow Your Trucking Business?</h2>
+            <p>
+                Let Tech Logistics handle dispatch and compliance while you
+                focus on driving.
+            </p>
+            <a href="signup.html" class="btn btn-primary btn-large">
+                Get Started Today
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <img
+                        src="images/logo.png"
+                        alt="Tech Logistics"
+                        class="footer-logo"
+                    />
+                    <p>
+                        Your trusted partner for truck dispatch and ELD
+                        compliance services across the USA.
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="signup.html">Sign Up</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>
+                        <i class="fas fa-phone"></i>
+                        +91 8854972180
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        logisticstech63@gmail.com
+                    </p>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Dallas, Texas, USA
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tech Logistics. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a
+        href="https://whatsapp.com/channel/0029Vb8QRCJ4o7qD28NwXK2H"
+        class="whatsapp-float"
+        target="_blank"
+    >
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
