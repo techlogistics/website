@@ -1,23 +1,33 @@
 // contact.js
+// This version uses the Firebase app and Firestore instance already created
+// in firebase-config.js. Do NOT import db here, so there is no module conflict.
 
-// Import Firestore from firebase-config.js
-import { db } from "./firebase-config.js";
 import {
+    getFirestore,
     collection,
     addDoc,
     serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-// Wait until page is loaded
+import { getApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+// Get existing Firebase app initialized in firebase-config.js
+const app = getApp();
+const db = getFirestore(app);
+
+// Wait for DOM
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("contactForm");
 
-    if (!form) return;
+    if (!form) {
+        console.error("contactForm not found.");
+        return;
+    }
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
 
-        // Get form values
+        // Read values from contact.html
         const name =
             document.getElementById("name")?.value.trim() || "";
 
@@ -33,14 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
         const message =
             document.getElementById("message")?.value.trim() || "";
 
-        // Basic validation
+        // Validate
         if (!name || !usdotNumber || !email || !subject || !message) {
             alert("Please fill in all fields.");
             return;
         }
 
         try {
-            // Save data to Firestore
+            // Save to Firestore collection: contact_messages
+            // NOTE: No phone field is saved.
             await addDoc(collection(db, "contact_messages"), {
                 name: name,
                 "USDOT Number": usdotNumber,
@@ -50,14 +61,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 createdAt: serverTimestamp()
             });
 
-            // Success message
             alert("Message sent successfully!");
-
-            // Reset form
             form.reset();
         } catch (error) {
-            console.error("Error sending message:", error);
-            alert("Failed to send message. Please try again.");
+            console.error("Firestore Error:", error);
+            alert("Failed to send message. Check browser console for details.");
         }
     });
 });
