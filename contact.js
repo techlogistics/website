@@ -1,75 +1,63 @@
 // contact.js
 
-// Firebase imports
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+// Import Firestore from firebase-config.js
+import { db } from "./firebase-config.js";
 import {
-  getFirestore,
-  collection,
-  addDoc,
-  serverTimestamp
+    collection,
+    addDoc,
+    serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-// Your Firebase configuration
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
+// Wait until page is loaded
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("contactForm");
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+    if (!form) return;
 
-// Contact form
-const form = document.getElementById("contactForm");
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-if (form) {
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+        // Get form values
+        const name =
+            document.getElementById("name")?.value.trim() || "";
 
-    // Get form values
-    const name =
-      document.getElementById("name")?.value.trim() || "";
+        const usdotNumber =
+            document.getElementById("usdotNumber")?.value.trim() || "";
 
-    const email =
-      document.getElementById("email")?.value.trim() || "";
+        const email =
+            document.getElementById("email")?.value.trim() || "";
 
-    // CHANGED: Removed phone and added USDOT number
-    const usdot =
-      document.getElementById("usdot")?.value.trim() || "";
+        const subject =
+            document.getElementById("subject")?.value.trim() || "";
 
-    const company =
-      document.getElementById("company")?.value.trim() || "";
+        const message =
+            document.getElementById("message")?.value.trim() || "";
 
-    const service =
-      document.getElementById("service")?.value || "";
+        // Basic validation
+        if (!name || !usdotNumber || !email || !subject || !message) {
+            alert("Please fill in all fields.");
+            return;
+        }
 
-    const message =
-      document.getElementById("message")?.value.trim() || "";
+        try {
+            // Save data to Firestore
+            await addDoc(collection(db, "contact_messages"), {
+                name: name,
+                "USDOT Number": usdotNumber,
+                email: email,
+                subject: subject,
+                message: message,
+                createdAt: serverTimestamp()
+            });
 
-    try {
-      // Save to Firestore
-      await addDoc(collection(db, "contactMessages"), {
-        name,
-        email,
-        usdot, // Saved instead of phone
-        company,
-        service,
-        message,
-        createdAt: serverTimestamp()
-      });
+            // Success message
+            alert("Message sent successfully!");
 
-      // Success message
-      alert("Message sent successfully!");
-
-      // Reset form
-      form.reset();
-    } catch (error) {
-      console.error("Error sending message:", error);
-      alert("Failed to send message. Please try again.");
-    }
-  });
-}
+            // Reset form
+            form.reset();
+        } catch (error) {
+            console.error("Error sending message:", error);
+            alert("Failed to send message. Please try again.");
+        }
+    });
+});
