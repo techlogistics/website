@@ -1,71 +1,62 @@
 // contact.js
-// This version uses the Firebase app and Firestore instance already created
-// in firebase-config.js. Do NOT import db here, so there is no module conflict.
+// Saves Contact Form messages to Firebase Firestore
 
 import {
-    getFirestore,
-    collection,
-    addDoc,
-    serverTimestamp
+  collection,
+  addDoc,
+  serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-import { getApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { db } from "./firebase-config.js";
 
-// Get existing Firebase app initialized in firebase-config.js
-const app = getApp();
-const db = getFirestore(app);
+// Contact form element
+const contactForm = document.getElementById("contactForm");
 
-// Wait for DOM
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("contactForm");
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    if (!form) {
-        console.error("contactForm not found.");
-        return;
+    // Get form values
+    const name =
+      document.getElementById("name")?.value.trim() || "";
+
+    const email =
+      document.getElementById("email")?.value.trim() || "";
+
+    // Removed phone field and added USDOT Number
+    const usdotNumber =
+      document.getElementById("usdotNumber")?.value.trim() || "";
+
+    const subject =
+      document.getElementById("subject")?.value.trim() || "";
+
+    const message =
+      document.getElementById("message")?.value.trim() || "";
+
+    // Validation
+    if (!name || !email || !usdotNumber || !subject || !message) {
+      alert("Please fill all required fields.");
+      return;
     }
 
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
+    try {
+      // Save to Firestore
+      await addDoc(collection(db, "contact_messages"), {
+        name,
+        email,
+        "USDOT Number": usdotNumber,
+        subject,
+        message,
+        createdAt: serverTimestamp()
+      });
 
-        // Read values from contact.html
-        const name =
-            document.getElementById("name")?.value.trim() || "";
+      alert("Message sent successfully!");
 
-        const usdotNumber =
-            document.getElementById("usdotNumber")?.value.trim() || "";
-
-        const email =
-            document.getElementById("email")?.value.trim() || "";
-
-        const subject =
-            document.getElementById("subject")?.value.trim() || "";
-
-        const message =
-            document.getElementById("message")?.value.trim() || "";
-
-        // Validate
-        if (!name || !usdotNumber || !email || !subject || !message) {
-            alert("Please fill in all fields.");
-            return;
-        }
-
-        try {
-            // Save to Firestore collection: contact_messages
-            // NOTE: No phone field is saved.
-            await addDoc(collection(db, "contact_messages"), {
-                name: name,
-                "USDOT Number": usdotNumber,
-                email: email,
-                subject: subject,
-                message: message,
-                createdAt: serverTimestamp()
-            });
-
-            alert("Message sent successfully!");
-            form.reset();
-        } catch (error) {
-            console.error("Firestore Error:", error);
-            alert("Failed to send message. Check browser console for details.");
-        }
-    });
-});
+      // Reset form
+      contactForm.reset();
+    } catch (error) {
+      console.error("Contact form error:", error);
+      alert("Failed to send message. Please try again.");
+    }
+  });
+}

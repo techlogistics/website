@@ -889,3 +889,65 @@ section {
         display: none;
     }
 }
+/* Dispatch Rates Section */
+.rates-title {
+    margin: 2.5rem 0 1.5rem;
+    font-size: 2rem;
+    color: #000;
+    text-align: center;
+}
+
+.rates-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin: 2rem 0;
+}
+
+.rate-item {
+    background: #ffffff;
+    border: 2px solid rgba(245, 179, 1, 0.2);
+    border-radius: 15px;
+    padding: 1rem 1.25rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    transition: all 0.3s ease;
+}
+
+.rate-item:hover {
+    transform: translateY(-3px);
+    border-color: #F5B301;
+    box-shadow: 0 15px 35px rgba(245, 179, 1, 0.15);
+}
+
+.rate-name {
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+}
+
+.rate-value {
+    font-weight: 700;
+    color: #F5B301;
+    white-space: nowrap;
+}
+
+.about-tagline {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    color: #000;
+}
+
+@media (max-width: 768px) {
+    .rates-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rate-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
