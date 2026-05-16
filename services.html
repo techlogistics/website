@@ -8,18 +8,26 @@
         name="description"
         content="Comprehensive truck dispatch services, ELD logbook management, rate negotiation, and DOT compliance support."
     />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet"
     />
+
+    <!-- Font Awesome -->
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 </head>
 <body>
-    <!-- Loading Screen -->
+    <!-- ======================================================
+         LOADING SCREEN
+    ======================================================= -->
     <div id="loader">
         <div class="loader-content">
             <img src="images/logo.png" alt="Tech Logistics" class="loader-logo" />
@@ -28,14 +36,21 @@
         </div>
     </div>
 
-    <!-- Navigation -->
+    <!-- ======================================================
+         NAVIGATION
+    ======================================================= -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
+            <!-- Logo -->
             <a href="index.html" class="nav-logo">
                 <img src="images/logo.png" alt="Tech Logistics" />
-                <span>Tech Logistics</span>
+                <div class="nav-logo-text">
+                    <strong>Tech Logistics</strong>
+                    <span>Dispatch &amp; ELD Services</span>
+                </div>
             </a>
 
+            <!-- Navigation Menu (Login and Sign Up Removed) -->
             <ul class="nav-menu" id="nav-menu">
                 <li class="nav-item">
                     <a href="index.html" class="nav-link">Home</a>
@@ -44,16 +59,11 @@
                     <a href="services.html" class="nav-link active">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a href="login.html" class="nav-link">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a href="signup.html" class="nav-link">Sign Up</a>
-                </li>
-                <li class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
                 </li>
             </ul>
 
+            <!-- Mobile Menu Button -->
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -62,7 +72,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- ======================================================
+         HERO SECTION
+    ======================================================= -->
     <section class="hero services-hero">
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
@@ -73,7 +85,9 @@
                 alt="Tech Logistics"
                 class="hero-logo"
             />
+
             <h1 class="hero-title">Our Services</h1>
+
             <p class="hero-subtitle">
                 Complete dispatch and compliance solutions for your trucking
                 business
@@ -81,12 +95,15 @@
         </div>
     </section>
 
-    <!-- Services Grid -->
+    <!-- ======================================================
+         SERVICES GRID
+    ======================================================= -->
     <section class="services reveal" id="services">
         <div class="container">
             <h2 class="section-title">Professional Trucking Services</h2>
 
             <div class="services-grid">
+
                 <!-- Dispatch Services -->
                 <div class="service-card" id="dispatch">
                     <div class="service-icon">
@@ -117,7 +134,7 @@
                         shippers across the USA.
                     </p>
                     <ul>
-                        <li>DAT & Truckstop load boards</li>
+                        <li>DAT &amp; Truckstop load boards</li>
                         <li>Direct shipper contracts</li>
                         <li>Backhaul planning</li>
                         <li>Hotshot and dry van loads</li>
@@ -237,11 +254,14 @@
                         <li>Audit support</li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- ======================================================
+         CTA SECTION
+    ======================================================= -->
     <section class="cta reveal">
         <div class="container">
             <h2>Ready to Grow Your Trucking Business?</h2>
@@ -249,16 +269,26 @@
                 Let Tech Logistics handle dispatch and compliance while you
                 focus on driving.
             </p>
-            <a href="signup.html" class="btn btn-primary btn-large">
+
+            <!-- Replaced with WhatsApp Link -->
+            <a
+                href="https://wa.me/918854972180"
+                class="btn btn-primary btn-large"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
                 Get Started Today
             </a>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ======================================================
+         FOOTER
+    ======================================================= -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+
                 <div class="footer-section">
                     <img
                         src="images/logo.png"
@@ -276,8 +306,6 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="services.html">Services</a></li>
-                        <li><a href="login.html">Login</a></li>
-                        <li><a href="signup.html">Sign Up</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -305,11 +333,14 @@
         </div>
     </footer>
 
-    <!-- Floating Buttons -->
+    <!-- ======================================================
+         FLOATING BUTTONS
+    ======================================================= -->
     <a
         href="https://whatsapp.com/channel/0029Vb8QRCJ4o7qD28NwXK2H"
         class="whatsapp-float"
         target="_blank"
+        rel="noopener noreferrer"
     >
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -318,6 +349,9 @@
         <i class="fas fa-chevron-up"></i>
     </button>
 
+    <!-- ======================================================
+         JAVASCRIPT
+    ======================================================= -->
     <script src="script.js"></script>
 </body>
 </html>
