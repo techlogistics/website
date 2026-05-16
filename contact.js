@@ -19,6 +19,8 @@ if (contactForm) {
     // Get form values
     const name =
       document.getElementById("name")?.value.trim() || "";
+        const name =
+      document.getElementById("USDOTNumber")?.value.trim() || "";
     const email =
       document.getElementById("email")?.value.trim() || "";
     const phone =
@@ -29,7 +31,7 @@ if (contactForm) {
       document.getElementById("message")?.value.trim() || "";
 
     // Validation
-    if (!name || !email || !subject || !message) {
+    if (!name || !email || !subject || !message || !USDOTNumber) {
       alert("Please fill all required fields.");
       return;
     }
@@ -38,6 +40,7 @@ if (contactForm) {
       // Save to Firestore
       await addDoc(collection(db, "contact_messages"), {
         name,
+        USDOTNumber,
         email,
         phone,
         subject,
