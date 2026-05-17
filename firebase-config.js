@@ -8,7 +8,7 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebas
 
 // Your Firebase project configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCZ7Ob9US5dKcdJ1-OoRhxFyaeG0GL2W4Q",
+  apiKey: "AIzaSyDqX4JoVCpehx48l58utBDEHAysyseh2Os",
   authDomain: "tech-logistics.firebaseapp.com",
   projectId: "tech-logistics",
   storageBucket: "tech-logistics.firebasestorage.app",
